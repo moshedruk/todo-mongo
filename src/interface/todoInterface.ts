@@ -1,5 +1,5 @@
+import mongoose from 'mongoose';
 
-
-export interface Itodo {
+export interface Itodo extends mongoose.Document {
     title: string;   
   }
