@@ -5,6 +5,8 @@ import {Itodo} from '../interface/todoInterface'
 // 2. Create a Schema corresponding to the document interface.
 const todoSchema:mongoose.Schema<Itodo> = new mongoose.Schema<Itodo>({
   title: { type: String, required: true },
+  status: { type: Boolean, default: false },
+  finished: { type: Boolean, default: false },
   
 });
 

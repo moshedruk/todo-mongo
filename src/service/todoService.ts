@@ -16,9 +16,8 @@ export const createTodo = async (todo:Itodo):Promise<Itodo>=>{
 }
 
 export const getallTodos = async ():Promise<Itodo[]>=>{
-    try{
-        // i need to get mor informtion of newtodo
-       const todos = await TodoModle.find();
+    try{        
+       const todos = await TodoModle.find({ status: false, finished: false });
        console.log(todos);
        return todos;    
        

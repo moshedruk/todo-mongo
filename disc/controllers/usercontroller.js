@@ -22,10 +22,14 @@ const createNewUser = (req, res) => __awaiter(void 0, void 0, void 0, function* 
     }
 });
 exports.createNewUser = createNewUser;
+// Function for fetching all users from the database
 const getUsers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        const users = yield (0, userService_1.GetUser)();
+        res.status(200).json({ users: users, msg: 'Users fetched successfully' });
     }
     catch (err) {
+        res.status(500).json({ msg: err.message });
     }
 });
 exports.getUsers = getUsers;

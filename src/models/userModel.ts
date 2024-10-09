@@ -9,5 +9,5 @@ const userSchema = new mongoose.Schema<IUser>({
   todos: [{ type: mongoose.Schema.Types.ObjectId, ref: 'todos' }]   
 });
 // 3. Create a Model.
-const UserModle = mongoose.model('User', userSchema)
+const UserModle:mongoose.Model<IUser> = mongoose.model('User', userSchema)
 export default UserModle

@@ -32,8 +32,7 @@ const createTodo = (todo) => __awaiter(void 0, void 0, void 0, function* () {
 exports.createTodo = createTodo;
 const getallTodos = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        // i need to get mor informtion of newtodo
-        const todos = yield todoModel_1.default.find();
+        const todos = yield todoModel_1.default.find({ status: false, finished: false });
         console.log(todos);
         return todos;
     }

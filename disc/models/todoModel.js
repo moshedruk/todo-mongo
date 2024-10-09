@@ -7,6 +7,8 @@ const mongoose_1 = __importDefault(require("mongoose"));
 // 2. Create a Schema corresponding to the document interface.
 const todoSchema = new mongoose_1.default.Schema({
     title: { type: String, required: true },
+    status: { type: Boolean, default: false },
+    finished: { type: Boolean, default: false },
 });
 // 3. Create a Model.
 const TodoModle = mongoose_1.default.model('todos', todoSchema);
