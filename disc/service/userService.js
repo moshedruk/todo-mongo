@@ -17,9 +17,9 @@ const userModel_1 = __importDefault(require("../models/userModel"));
 const createUser = (user) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         // i need to get mor informtion of newUser
-        const { user_name } = user;
+        const { name } = user;
         const dbUser = new userModel_1.default({
-            user_name,
+            name,
         });
         yield dbUser.save();
         return user;

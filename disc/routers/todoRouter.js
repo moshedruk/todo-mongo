@@ -7,5 +7,5 @@ const express_1 = __importDefault(require("express"));
 const routerTodo = express_1.default.Router();
 const todocontroller_1 = require("../controllers/todocontroller");
 routerTodo.post('/new', todocontroller_1.createNewTodo);
-routerTodo.get('/todos', todocontroller_1.getTodos);
+routerTodo.get('/getTodos', todocontroller_1.getTodos);
 exports.default = routerTodo;

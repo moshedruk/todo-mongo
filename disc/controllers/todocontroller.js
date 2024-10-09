@@ -24,8 +24,11 @@ const createNewTodo = (req, res) => __awaiter(void 0, void 0, void 0, function* 
 exports.createNewTodo = createNewTodo;
 const getTodos = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        const allTodos = yield (0, todoService_1.getallTodos)();
+        res.status(200).json({ allTodos, msg: 'getting todo successfully' });
     }
     catch (err) {
+        res.status(400).json({ msg: err.message });
     }
 });
 exports.getTodos = getTodos;

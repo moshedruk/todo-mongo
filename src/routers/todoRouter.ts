@@ -4,6 +4,6 @@ import {createNewTodo,getTodos} from '../controllers/todocontroller'
 
 routerTodo.post('/new',createNewTodo)
 
-routerTodo.get('/todos',getTodos)
+routerTodo.get('/getTodos',getTodos)
 
 export default routerTodo

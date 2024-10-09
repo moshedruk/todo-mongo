@@ -1,12 +1,13 @@
+import { IUser } from "../interface/userInterface";
 import UserModle from "../models/userModel"
 
-export const createUser = async (user:any):Promise<any>=>{
+export const createUser = async (user:IUser):Promise<IUser>=>{
     try{
         // i need to get mor informtion of newUser
-       const {user_name} = user
+       const {name} = user
        
        const dbUser = new UserModle({
-        user_name,       
+       name,       
         
        });
        await dbUser.save()

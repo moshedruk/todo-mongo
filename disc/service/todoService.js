@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createTodo = void 0;
+exports.getallTodos = exports.createTodo = void 0;
 const todoModel_1 = __importDefault(require("../models/todoModel"));
 const createTodo = (todo) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -30,3 +30,16 @@ const createTodo = (todo) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.createTodo = createTodo;
+const getallTodos = () => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        // i need to get mor informtion of newtodo
+        const todos = yield todoModel_1.default.find();
+        console.log(todos);
+        return todos;
+    }
+    catch (err) {
+        console.log(err);
+        throw err;
+    }
+});
+exports.getallTodos = getallTodos;
